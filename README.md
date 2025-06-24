@@ -128,7 +128,7 @@ This extension:
 - ✅ Requires minimal permissions:
   - `activeTab`: Access current tab when you interact with the extension
   - `clipboardWrite`: Copy content to clipboard
-  - Host permission for `docs.github.com`: Enable automatic functionality on GitHub API docs
+  - Automatic activation on `docs.github.com` for seamless functionality
 
 ## Development
 
