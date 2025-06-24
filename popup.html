@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Copy Docs</title>
+  <style>
+    body {
+      width: 280px;
+      min-height: 200px;
+      margin: 0;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 14px;
+      color: #333;
+      background: #f6f8fa;
+    }
+    
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e1e4e8;
+    }
+    
+    .logo {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      background: #0366d6;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+    
+    h1 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    
+    .status {
+      background: white;
+      border: 1px solid #e1e4e8;
+      border-radius: 6px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    
+    .status-row:last-child {
+      margin-bottom: 0;
+    }
+    
+    .status-label {
+      color: #586069;
+    }
+    
+    .status-value {
+      font-weight: 500;
+    }
+    
+    .active {
+      color: #28a745;
+    }
+    
+    .inactive {
+      color: #6a737d;
+    }
+    
+    .stats {
+      background: white;
+      border: 1px solid #e1e4e8;
+      border-radius: 6px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    
+    .stats h2 {
+      margin: 0 0 8px 0;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    
+    .help {
+      text-align: center;
+      color: #586069;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+    
+    .help a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+    
+    .help a:hover {
+      text-decoration: underline;
+    }
+    
+    .loading {
+      text-align: center;
+      color: #586069;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">C</div>
+    <h1>Copy Docs</h1>
+  </div>
+  
+  <div id="content" class="loading">
+    Loading...
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

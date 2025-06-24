@@ -1,0 +1,96 @@
+/* Styles for Copy Docs extension */
+
+.copy-docs-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: #f6f8fa;
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+  color: #24292e;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.copy-docs-button:hover {
+  background: #ffffff;
+  border-color: #0366d6;
+  color: #0366d6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.copy-docs-button:active {
+  transform: scale(0.95);
+}
+
+.copy-docs-button svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.copy-docs-button.copy-docs-success {
+  background: #28a745;
+  border-color: #28a745;
+  color: white;
+}
+
+.copy-docs-button.copy-docs-success:hover {
+  background: #2ea44f;
+  border-color: #2ea44f;
+}
+
+/* Ensure button works with different code block styles */
+.RestCodeSamples_codeBlock__EV_jQ {
+  position: relative !important;
+}
+
+pre:has(.copy-docs-button) {
+  position: relative !important;
+}
+
+/* Animation for button appearance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.copy-docs-button {
+  animation: fadeIn 0.2s ease;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .copy-docs-button {
+    background: #161b22;
+    border-color: #30363d;
+    color: #c9d1d9;
+  }
+  
+  .copy-docs-button:hover {
+    background: #21262d;
+    border-color: #58a6ff;
+    color: #58a6ff;
+  }
+  
+  .copy-docs-button.copy-docs-success {
+    background: #238636;
+    border-color: #238636;
+    color: white;
+  }
+}
