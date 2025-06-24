@@ -16,10 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     });
     
-    // Get stats from storage
-    chrome.storage.local.get(['copyCount', 'lastCopy'], (data) => {
-      updateStats(data);
-    });
+    // No storage tracking for privacy
     
   } catch (error) {
     console.error('Popup error:', error);
@@ -45,14 +42,14 @@ function showActiveStatus(container, status) {
     </div>
     
     <div class="stats">
-      <h2>Statistics</h2>
+      <h2>Privacy</h2>
       <div class="status-row">
-        <span class="status-label">Total copies:</span>
-        <span class="status-value" id="copyCount">0</span>
+        <span class="status-label">Data collected:</span>
+        <span class="status-value">None</span>
       </div>
       <div class="status-row">
-        <span class="status-label">Last copy:</span>
-        <span class="status-value" id="lastCopy">Never</span>
+        <span class="status-label">Permissions:</span>
+        <span class="status-value">Minimal</span>
       </div>
     </div>
     
@@ -85,29 +82,4 @@ function showInactiveStatus(container) {
   `;
 }
 
-function updateStats(data) {
-  const copyCountEl = document.getElementById('copyCount');
-  const lastCopyEl = document.getElementById('lastCopy');
-  
-  if (copyCountEl && data.copyCount) {
-    copyCountEl.textContent = data.copyCount || 0;
-  }
-  
-  if (lastCopyEl && data.lastCopy) {
-    const date = new Date(data.lastCopy);
-    const now = new Date();
-    const diff = now - date;
-    
-    if (diff < 60000) { // Less than 1 minute
-      lastCopyEl.textContent = 'Just now';
-    } else if (diff < 3600000) { // Less than 1 hour
-      const minutes = Math.floor(diff / 60000);
-      lastCopyEl.textContent = `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
-    } else if (diff < 86400000) { // Less than 1 day
-      const hours = Math.floor(diff / 3600000);
-      lastCopyEl.textContent = `${hours} hour${hours > 1 ? 's' : ''} ago`;
-    } else {
-      lastCopyEl.textContent = date.toLocaleDateString();
-    }
-  }
-}
+// No statistics tracking for enhanced privacy

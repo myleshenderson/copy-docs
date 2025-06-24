@@ -5,8 +5,7 @@
   "description": "Easily copy API schemas and responses from documentation sites",
   "permissions": [
     "activeTab",
-    "clipboardWrite",
-    "storage"
+    "clipboardWrite"
   ],
   "action": {
     "default_popup": "popup.html",

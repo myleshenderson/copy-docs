@@ -7,7 +7,7 @@ A Chrome extension that makes it easy to copy API schemas and response examples 
 - 🎯 **One-click copy**: Hover over code blocks to reveal a copy button
 - 📄 **Full section copy**: Copy entire API endpoint documentation including schemas
 - 🔍 **Auto-detection**: Automatically detects API documentation code blocks and sections
-- 📊 **Usage tracking**: See how many times you've used the extension
+- 🔒 **Privacy-focused**: No data collection, minimal permissions
 - 🚀 **Lightweight**: Minimal performance impact
 - 🔌 **Extensible**: Easy to add support for new documentation sites
 
@@ -123,9 +123,11 @@ Currently, this extension is in development mode. To package for production:
 
 This extension:
 - ✅ Only activates on supported documentation sites
-- ✅ Doesn't collect or transmit any personal data
-- ✅ Stores only local usage statistics
-- ✅ Requires minimal permissions
+- ✅ Doesn't collect or store any personal data
+- ✅ No usage tracking or analytics
+- ✅ Requires only essential permissions:
+  - `activeTab`: Access current tab when you use the extension
+  - `clipboardWrite`: Copy content to clipboard
 
 ## Development
 
