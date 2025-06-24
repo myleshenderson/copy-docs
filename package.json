@@ -1,0 +1,24 @@
+{
+  "name": "copy-docs",
+  "version": "1.0.0",
+  "description": "Chrome extension for copying API documentation schemas and responses",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "package": "node scripts/package.js",
+    "release": "npm version patch && git push && git push --tags"
+  },
+  "keywords": [
+    "chrome-extension",
+    "api-documentation",
+    "developer-tools"
+  ],
+  "author": "Myles Henderson",
+  "license": "MIT",
+  "devDependencies": {
+    "archiver": "^6.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/myleshenderson/copy-docs.git"
+  }
+}

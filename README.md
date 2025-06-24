@@ -13,21 +13,31 @@ A Chrome extension that makes it easy to copy API schemas and response examples 
 
 ## Installation
 
+### Chrome Web Store (Coming Soon)
+The extension will be available on the Chrome Web Store soon!
+
+### Manual Installation
+
+1. Download the latest release from [GitHub Releases](https://github.com/myleshenderson/copy-docs/releases)
+2. Extract the ZIP file
+3. Open Chrome and navigate to `chrome://extensions/`
+4. Enable "Developer mode" in the top right
+5. Click "Load unpacked" and select the extracted directory
+6. Visit [GitHub API docs](https://docs.github.com/en/rest) to try it out!
+
 ### Development Mode
 
 1. Clone this repository:
    ```bash
    git clone https://github.com/myleshenderson/copy-docs.git
    cd copy-docs
+   npm install
+   npm run build
    ```
 
 2. Open Chrome and navigate to `chrome://extensions/`
-
 3. Enable "Developer mode" in the top right
-
-4. Click "Load unpacked" and select the `copy-docs` directory
-
-5. The extension is now installed! Visit [GitHub API docs](https://docs.github.com/en/rest) to try it out.
+4. Click "Load unpacked" and select the `dist` directory
 
 ## Usage
 
@@ -116,6 +126,25 @@ This extension:
 - ✅ Doesn't collect or transmit any personal data
 - ✅ Stores only local usage statistics
 - ✅ Requires minimal permissions
+
+## Development
+
+### Building and Testing
+```bash
+npm install
+npm run build    # Build the extension
+npm run package  # Create ZIP package
+npm run release  # Bump version and create tag
+```
+
+### Publishing
+The extension automatically publishes to the Chrome Web Store when you create a new release tag:
+
+```bash
+npm run release  # This will trigger auto-publishing
+```
+
+See [WEBSTORE_SETUP.md](WEBSTORE_SETUP.md) for Chrome Web Store publishing setup.
 
 ## Contributing
 

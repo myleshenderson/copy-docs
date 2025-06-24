@@ -23,9 +23,17 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://docs.github.com/*"],
-      "js": ["sites/site-config.js", "sites/github.js", "content.js"],
-      "css": ["styles.css"]
+      "matches": [
+        "*://docs.github.com/*"
+      ],
+      "js": [
+        "sites/site-config.js",
+        "sites/github.js",
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ]
     }
   ],
   "background": {
