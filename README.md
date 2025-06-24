@@ -125,9 +125,10 @@ This extension:
 - ✅ Only activates on supported documentation sites
 - ✅ Doesn't collect or store any personal data
 - ✅ No usage tracking or analytics
-- ✅ Requires only essential permissions:
-  - `activeTab`: Access current tab when you use the extension
+- ✅ Requires minimal permissions:
+  - `activeTab`: Access current tab when you interact with the extension
   - `clipboardWrite`: Copy content to clipboard
+  - Host permission for `docs.github.com`: Enable automatic functionality on GitHub API docs
 
 ## Development
 

@@ -16,8 +16,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     });
     
-    // No storage tracking for privacy
-    
   } catch (error) {
     console.error('Popup error:', error);
     contentDiv.innerHTML = '<div class="status">Error loading status</div>';
@@ -78,6 +76,27 @@ function showInactiveStatus(container) {
       • GitHub API Documentation
       <br><br>
       <a href="https://github.com/myleshenderson/copy-docs" target="_blank">View on GitHub</a>
+    </div>
+  `;
+}
+
+function showActivatingStatus(container) {
+  container.innerHTML = `
+    <div class="status">
+      <div class="status-row">
+        <span class="status-label">Status:</span>
+        <span class="status-value active">Activating...</span>
+      </div>
+      <div class="status-row">
+        <span class="status-label">Site:</span>
+        <span class="status-value">GitHub API</span>
+      </div>
+    </div>
+    
+    <div class="help">
+      Extension is activating on this page.
+      <br>
+      Refresh if copy buttons don't appear.
     </div>
   `;
 }

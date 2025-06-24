@@ -7,6 +7,9 @@
     "activeTab",
     "clipboardWrite"
   ],
+  "host_permissions": [
+    "*://docs.github.com/*"
+  ],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -32,7 +35,8 @@
       ],
       "css": [
         "styles.css"
-      ]
+      ],
+      "run_at": "document_idle"
     }
   ],
   "background": {
