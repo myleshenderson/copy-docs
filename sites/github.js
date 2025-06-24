@@ -108,6 +108,61 @@ const SITE_CONFIG = {
       content.push('');
     }
     
+    // Get response schema from the original element (not clone) to handle tabs properly
+    const responseSection = element.querySelector('.col-md-12.col-lg-6.position-sticky');
+    if (responseSection) {
+      // Find the tab nav for response format
+      const tabNav = responseSection.querySelector('nav[aria-label*="response format"]');
+      if (tabNav) {
+        // Check if there's a Response schema tab
+        const schemaTab = Array.from(tabNav.querySelectorAll('a[role="tab"]'))
+          .find(tab => tab.textContent.includes('Response schema'));
+        
+        if (schemaTab) {
+          // The schema is usually in a code block that appears when the schema tab is selected
+          // Since we can't click in our context, we'll look for all response code blocks
+          const responseBlocks = responseSection.querySelectorAll('.RestCodeSamples_responseCodeBlock__QlM4d');
+          
+          // The schema is typically the second response block (first is example, second is schema)
+          if (responseBlocks.length > 1) {
+            const schemaBlock = responseBlocks[1].querySelector('code');
+            if (schemaBlock) {
+              const schemaText = schemaBlock.textContent.trim();
+              if (schemaText.includes('"type"')) {
+                content.push('## Response Schema');
+                content.push('');
+                content.push('```json');
+                content.push(schemaText);
+                content.push('```');
+                content.push('');
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    // Fallback: look for schema-like content in code blocks
+    if (!content.includes('## Response Schema')) {
+      const allCodeBlocks = clone.querySelectorAll('[data-highlight="json"] code');
+      for (const block of allCodeBlocks) {
+        const text = block.textContent.trim();
+        // Check if this looks like a schema (has "type" at root level and either "properties" or "items")
+        if (text.startsWith('{') && 
+            text.includes('"type"') && 
+            (text.includes('"properties"') || text.includes('"items"')) &&
+            !text.includes('"total_minutes_used"')) { // Exclude response examples
+          content.push('## Response Schema');
+          content.push('');
+          content.push('```json');
+          content.push(text);
+          content.push('```');
+          content.push('');
+          break;
+        }
+      }
+    }
+    
     return content.join('\n').trim();
   },
   

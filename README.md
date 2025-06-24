@@ -5,7 +5,8 @@ A Chrome extension that makes it easy to copy API schemas and response examples 
 ## Features
 
 - 🎯 **One-click copy**: Hover over code blocks to reveal a copy button
-- 🔍 **Auto-detection**: Automatically detects API documentation code blocks
+- 📄 **Full section copy**: Copy entire API endpoint documentation including schemas
+- 🔍 **Auto-detection**: Automatically detects API documentation code blocks and sections
 - 📊 **Usage tracking**: See how many times you've used the extension
 - 🚀 **Lightweight**: Minimal performance impact
 - 🔌 **Extensible**: Easy to add support for new documentation sites
@@ -30,10 +31,21 @@ A Chrome extension that makes it easy to copy API schemas and response examples 
 
 ## Usage
 
+### Copying Code Blocks
 1. Navigate to a supported documentation site (currently GitHub API docs)
 2. Hover over any code block containing API schemas or responses
 3. Click the "Copy" button that appears
 4. The content is now in your clipboard!
+
+### Copying Full API Sections
+1. Hover over any API endpoint heading (h2)
+2. Click the "Copy Section" button that appears
+3. The extension copies the complete endpoint documentation including:
+   - Endpoint description
+   - Parameters and their descriptions
+   - Request examples
+   - Response examples
+   - Response schema (when available)
 
 ## Supported Sites
 
