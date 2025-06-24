@@ -74,6 +74,22 @@ pre:has(.copy-docs-button) {
   animation: fadeIn 0.2s ease;
 }
 
+/* Section copy button specific styles */
+.copy-docs-section-button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  padding: 6px 14px;
+  font-size: 13px;
+}
+
+/* Ensure h2 headings can contain the button */
+h2:has(.copy-docs-section-button) {
+  position: relative !important;
+  padding-right: 120px; /* Make room for button */
+}
+
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
   .copy-docs-button {
